@@ -133,7 +133,6 @@ def get_table_download_link(df,name):
     </head>
     </html>
     """
-    time.sleep(4)
     return dl_link,link
 
 
@@ -185,6 +184,8 @@ if DEVICE == 'android':
                     df_xlsx = to_excel(data2)
                     st.dataframe(data2)
                     d_url,url = get_table_download_link(df_xlsx, DEVICE+"_"+i)
+                    st.write("wait")
+                    time.sleep(4)
                     st.markdown(url, unsafe_allow_html=True)
                     if agree:
                         components.html(
