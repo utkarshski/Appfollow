@@ -33,10 +33,10 @@ COUNTRY = st.selectbox(
 
 st.write('Country selected:', COUNTRY)
 
-agree = st.checkbox('Download All files Automatically',value=True)
+# agree = st.checkbox('Download All files Automatically',value=True)
 
-if agree:
-    st.write('All files will be downloaded, Please allow multiple downloads, when promted!')
+# if agree:
+#     st.write('All files will be downloaded, Please allow multiple downloads, when promted!')
 
 if DEVICE == 'android':
     OS = 'android'
@@ -55,15 +55,15 @@ if DEVICE == 'android':
                 if isinstance(data1, pd.DataFrame):
                     data2 = sorting_data(data1)
                     df_xlsx = to_excel(data2)
-                    st.dataframe(data2)
+                    # st.dataframe(data2)
                     d_url,url = get_table_download_link(df_xlsx, DEVICE+"_"+i)
                     st.write("wait")
                     time.sleep(4)
                     st.markdown(url, unsafe_allow_html=True)
-                    if agree:
-                        components.html(
-                        d_url,height=0,
-                        )
+                    # if agree:
+                    components.html(
+                    d_url,height=0,
+                    )
                 else:
                     st.info(f"No Data Avialable for {i}")
         st.success("All Data Extracted!")
@@ -91,13 +91,13 @@ else:
                     if isinstance(data1, pd.DataFrame):
                         data2 = sorting_data(data1)
                         df_xlsx = to_excel(data2)
-                        st.dataframe(data2)
+                        # st.dataframe(data2)
                         d_url,url = get_table_download_link(df_xlsx, DEVICE+"_"+j)
                         st.markdown(url, unsafe_allow_html=True)
-                        if agree:
-                            components.html(
-                            d_url,height=0,
-                            )
+                        # if agree:
+                        components.html(
+                        d_url,height=0,
+                        )
                     else:
                         st.info(f"No Data Avialable for {j}")
             
@@ -123,13 +123,13 @@ else:
                     if isinstance(data1, pd.DataFrame):
                         data2 = sorting_data(data1)
                         df_xlsx = to_excel(data2)
-                        st.dataframe(data2)
+                        # st.dataframe(data2)
                         d_url,url = get_table_download_link(df_xlsx, DEVICE+"_"+j)
                         st.markdown(url, unsafe_allow_html=True)
-                        if agree:
-                            components.html(
-                            d_url,height=0,
-                            )
+                        # if agree:
+                        components.html(
+                        d_url,height=0,
+                        )
                     else:
                         st.info(f"No Data Avialable for {j}")
             
