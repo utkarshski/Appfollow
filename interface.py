@@ -42,7 +42,8 @@ if DEVICE == 'android':
     OS = 'android'
     APP_LIST_API = "http://api.appfollow.io/apps/app?apps_id=105810"
     # Android
-    external_ids = external_ids_fetcher(APP_LIST_API, KEY, OS)
+    with st.spinner("Fecthing App list"):
+        external_ids = external_ids_fetcher(APP_LIST_API, KEY, OS)
     external_ids = st.multiselect(
     'Select APP',
     external_ids)
@@ -76,7 +77,8 @@ else:
     
     if DEVICE == 'ipad':
         # ipad
-        external_ids = external_ids_fetcher(APP_LIST_API, KEY, OS)
+        with st.spinner("Fecthing App list"):
+            external_ids = external_ids_fetcher(APP_LIST_API, KEY, OS)
         apps = st.multiselect(
                                     'Select APP',
                                     external_ids['app.title'])
@@ -108,7 +110,8 @@ else:
     
     else:
         # iphone
-        external_ids = external_ids_fetcher(APP_LIST_API, KEY, OS)
+        with st.spinner("Fecthing App list"):
+            external_ids = external_ids_fetcher(APP_LIST_API, KEY, OS)
         apps = st.multiselect(
                                     'Select APP',
                                     external_ids['app.title'])
