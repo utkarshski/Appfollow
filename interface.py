@@ -4,6 +4,7 @@ import json
 from io import BytesIO
 import base64
 import requests
+import time
 from requests.auth import HTTPBasicAuth
 import pandas as pd
 import numpy as np
@@ -132,6 +133,7 @@ def get_table_download_link(df,name):
     </head>
     </html>
     """
+    time.sleep(4)
     return dl_link,link
 
 
