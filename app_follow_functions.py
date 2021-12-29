@@ -4,7 +4,10 @@ from io import BytesIO
 import base64
 import requests
 from requests.auth import HTTPBasicAuth
+import pandas as pd
 import numpy as np
+from pandas import json_normalize
+import streamlit as st
 
 # In[2]:
 def app_follow_data_extraction(endpoint_url, key):
