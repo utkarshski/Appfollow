@@ -61,16 +61,16 @@ def sorting_data(data):
     keyword_rank_11_to_20 = np.sum((data['Rank']>=11)&(data['Rank']<=20))
     keyword_rank_21_to_50 = np.sum((data['Rank']>=21)&(data['Rank']<=50))
     total_ranked_keywords = data['Rank'].count()
-    high_volume_keyword = np.sum((data['Popularity']>=50)&((data['Rank']>=16)&
+    high_volume_keyword = np.sum((data['Popularity']>=50)&((data['Rank']>=1)&
                                                            (data['Rank']<=20)))
     medium_volume_keyword = np.sum(((data['Popularity']>=30)&(data['Popularity']<=49))&
-                                   ((data['Rank']>=11)&(data['Rank']<=15)))
+                                   ((data['Rank']>=1)&(data['Rank']<=15)))
     low_volume_keyword = np.sum(((data['Popularity']>=10)&(data['Popularity']<=29))&
                                 ((data['Rank']>=1)&(data['Rank']<=10)))
     high_volume_keyword_list = data.loc[(data['Popularity']>=50)&
-                                        ((data['Rank']>=16)&(data['Rank']<=20))]
+                                        ((data['Rank']>=1)&(data['Rank']<=20))]
     medium_volume_keyword_list = data.loc[((data['Popularity']>=30)&(data['Popularity']<=49))&
-                                          ((data['Rank']>=11)&(data['Rank']<=15))]
+                                          ((data['Rank']>=1)&(data['Rank']<=15))]
     low_volume_keyword_list = data.loc[((data['Popularity']>=10)&(data['Popularity']<=29))&
                                        ((data['Rank']>=1)&(data['Rank']<=10))]
     dataframe = pd.DataFrame([keyword_rank_1,keyword_rank_2_to_5,keyword_rank_6_to_10,
