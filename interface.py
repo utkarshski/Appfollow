@@ -1,7 +1,6 @@
 # In[1]:
 """Importing Modules"""
 
-import time
 from datetime import date    
 import pandas as pd
 import numpy as np
@@ -23,10 +22,6 @@ st.title('App follow data extractor')
 # KEY = st.text_input('Access Key')
 KEY = st.secrets["Key"]
 
-DATE = st.date_input("Date")
-
-st.write('Date selected:', DATE)
-
 DEVICE = st.selectbox(
     'Device',
     ('ipad', 'iphone', 'android'))
@@ -40,13 +35,15 @@ COUNTRY = st.selectbox(
 
 st.write('Country selected:', COUNTRY)
 
+DATE = st.date_input("Date")
+
+st.write('Date selected:', DATE)
 if DATE == date.today():
     st.warning("Please change today's date")
     st.stop()
     
 DATE = str(DATE)
 
-time.sleep(7.5)
 # agree = st.checkbox('Download All files Automatically',value=True)
 
 # if agree:
@@ -72,8 +69,6 @@ if DEVICE == 'android':
                     df_xlsx = to_excel(data2)
                     # st.dataframe(data2)
                     d_url,url = get_table_download_link(df_xlsx, DEVICE+"_"+i)
-                    st.write("wait")
-                    time.sleep(4)
                     st.markdown(url, unsafe_allow_html=True)
                     # if agree:
                     components.html(
