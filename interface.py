@@ -4,9 +4,13 @@
 import time
 from datetime import date    
 import pandas as pd
-import xlsxwriter
 import numpy as np
 import streamlit as st
+try:
+    import xlsxwriter
+except Exception as e:
+    st.write(e)
+    ! pip install xlsxwriter
 import streamlit.components.v1 as components
 from app_follow_functions import *
 
