@@ -11,7 +11,7 @@ import sys
 try:
     import xlsxwriter
 except ImportError:
-    subprocess.check_call([sys.executable, "-m", "pip", "install", 'XlsxWriter'])
+    subprocess.check_call([sys.executable, "-m", "pip", "install", 'XlsxWriter==3.0.2'])
 finally:
     import xlsxwriter
 import streamlit.components.v1 as components
