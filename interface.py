@@ -17,8 +17,6 @@ KEY = st.secrets["Key"]
 DATE = st.date_input("Date")
 
 st.write('Date selected:', DATE)
-DATE = str(DATE)
-
 
 DEVICE = st.selectbox(
     'Device',
@@ -33,6 +31,13 @@ COUNTRY = st.selectbox(
 
 st.write('Country selected:', COUNTRY)
 
+if DATE == pd.:
+    st.warning("Please change today's date")
+    st.stop()
+    
+DATE = str(DATE)
+
+time.sleep(7)
 # agree = st.checkbox('Download All files Automatically',value=True)
 
 # if agree:
