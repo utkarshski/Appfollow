@@ -6,11 +6,14 @@ from datetime import date
 import pandas as pd
 import numpy as np
 import streamlit as st
+import subprocess
+import sys
 try:
     import xlsxwriter
-except Exception as e:
-    st.write(e)
-    ! pip install xlsxwriter
+except ImportError:
+    subprocess.check_call([sys.executable, "-m", "pip", "install", 'XlsxWriter'])
+finally:
+    import xlsxwriter
 import streamlit.components.v1 as components
 from app_follow_functions import *
 
