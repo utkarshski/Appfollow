@@ -38,7 +38,7 @@ if DATE == date.today():
     
 DATE = str(DATE)
 
-time.sleep(7)
+time.sleep(7.5)
 # agree = st.checkbox('Download All files Automatically',value=True)
 
 # if agree:
