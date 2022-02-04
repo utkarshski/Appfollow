@@ -2,6 +2,7 @@
 """Importing Modules"""
 
 import time
+from datetime import date    
 import pandas as pd
 import numpy as np
 import streamlit as st
@@ -31,7 +32,7 @@ COUNTRY = st.selectbox(
 
 st.write('Country selected:', COUNTRY)
 
-if DATE == pd.:
+if DATE == date.today():
     st.warning("Please change today's date")
     st.stop()
     
