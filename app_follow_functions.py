@@ -30,11 +30,11 @@ def external_ids_fetcher(endpoint_url, key, os):
         st.stop()
 
     if os == 'ios':
-        af_df = af_df[af_df["app.artist_name"].str.contains('skidos', case = False)]
+        af_df = af_df[af_df["app.artist_name"].str.contains('skidos', case = False, na=False)]
         external_ids = af_df[['app.ext_id','app.title']]
         external_ids.reset_index(drop=True, inplace=True)
     elif os == 'android':
-        af_df = af_df[af_df["app.ext_id"].str.contains('skidos', case = False)]
+        af_df = af_df[af_df["app.ext_id"].str.contains('skidos', case = False, na=False)]
         external_ids = af_df['app.ext_id'].tolist()
     return external_ids
 # In[3]:
